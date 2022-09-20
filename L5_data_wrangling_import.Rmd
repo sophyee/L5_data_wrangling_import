@@ -6,7 +6,7 @@ date: "2022-09-20"
 
 # Data Wrangling I: Importing Data
 
-```{r, echo=False}
+```{r}
 library(tidyverse)
 library(readxl) # Library containing read_excel
 library(haven) # Library containing read_sas
@@ -19,7 +19,7 @@ Let's import data using the **reader** package
 
 ```{r}
 litters_df = read_csv("L5_data/FAS_litters.csv")
-# We used a relative path above to tell read_csv() where the data is located
+# We used a *relative path* above to tell read_csv() where the data is located
 # It's easy to do this in an R Project!
 
 litters_df = janitor::clean_names(litters_df)
@@ -84,3 +84,5 @@ pulse_df = read_sas("L5_data/public_pulse_data.sas7bdat")
 write_csv(lotr_words_df, file = "L5_data/lotr_words_df.csv")
 ```
 
+
+## Why not use Base R?
