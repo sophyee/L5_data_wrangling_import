@@ -6,4 +6,74 @@ date: "2022-09-20"
 
 # Data Wrangling I: Importing Data
 
-## Data Import: CSVs
+```{r, echo=False}
+library(tidyverse)
+library(readxl)
+```
+
+
+## Importing Data: CSVs
+
+Let's import data using the **reader** package
+
+```{r}
+litters_df = read_csv("L5_data/FAS_litters.csv")
+# We used a relative path above to tell read_csv() where the data is located
+# It's easy to do this in an R Project!
+
+litters_df = janitor::clean_names(litters_df)
+# Clean the data
+# If you don't want to load whole package because only using one function
+##### packagename::functionname(dataset)
+### Will call that package and specific function and use it, but won't load whole package
+
+```
+Let's look at the data!
+```{r}
+litters_df # Prints out some but not all of rows
+head(litters_df) # Prints out the first 6 rows
+tail(litters_df) # Prints out the last 5 rows
+```
+
+```{r, eval-FALSE}
+view(litters_df)
+# See the whole dataset, BUT make sure eval=FALSE or could be too much
+# eval = FALSE opens it up in a new window when run, but won't appear after knitting
+```
+
+
+```{r}
+skimr::skim(litters_df)
+# 
+```
+
+
+
+### read_csv Options
+
+```{r, eval=FALSE}
+read_csv("L5_data/FAS_litters.csv", skip = 2)
+```
+
+
+## Other File Formats
+
+Reading in an Excel spreadsheet:
+```{r}
+read_excel("L5_data/mlb11.xlsx")
+```
+```{r}
+lotr_words_df =
+  read_excel(
+    "L5_data/LotR_Words.xlsx",
+    range = "B3:D6")
+```
+
+## More formats...
+
+Read in a SAS dataset:
+
+```{r}
+
+```
+
