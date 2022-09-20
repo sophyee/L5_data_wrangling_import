@@ -1,8 +1,9 @@
 ---
 title: "L5_data_wrangling_1"
-output: html_document
+output: github_document
 date: "2022-09-20"
 ---
 
 # Data Wrangling I: Importing Data
 
+## Data Import: CSVs
